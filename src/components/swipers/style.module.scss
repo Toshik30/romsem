@@ -1,0 +1,93 @@
+@import '../../assets/style/varibles';
+.customSlide {
+    margin: 50px 0px;
+    position: relative;
+    padding: 20px;
+    background: $white-color;
+    &_description {
+        position: absolute;
+        height: 100%;
+        right: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: end;
+        h2 {
+            margin-bottom: 10px;
+        }
+        .hotPrice {
+            margin-top: 20px;
+        }
+        .oldPrice {
+            color: $gray-color;
+            position: relative;
+            margin-bottom: 8px;
+            &:after {
+                content: '';
+                position: absolute;
+                height: 2px;
+                left: 32%;
+                top: 43%;
+                width: 70%;
+                background: red;
+                transform: rotate(153deg);
+            }
+        }
+        .actualPrice {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    }
+    img {
+        max-width: 700px;
+        height: 450px;
+    }
+    .primaryButton {
+        bottom: 50px;
+        position: absolute;
+        transition: .5s;
+        &:hover {
+            animation: trimButton .6s alternate 2;
+        }
+    }
+}
+@keyframes trimButton {
+    0%{
+        transform: rotate(5deg);
+    }
+    20%{
+        transform: rotate(-5deg);
+    }
+    40%{
+        transform: rotate(5deg);
+    }
+    60%{
+        transform: rotate(-5deg);
+    }
+    80%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: rotate(-5deg);
+    }
+}
+.swiperMorePopular {
+    // position: absolute;
+    margin: 80px 0px;
+    .swiperSlide {
+        background: $white-color;
+        &_description {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 18px 20px;
+            border-bottom: 1px solid $gray-light-color;
+        }
+        &_nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 17px;
+        }
+    }
+}
+

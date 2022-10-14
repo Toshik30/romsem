@@ -1,0 +1,66 @@
+@import '../../assets/style/varibles';
+
+.footer {
+    color: $gray-color;
+    &_wrapper {
+        border-top: 1px solid $gray-color;
+        padding-top: 22px;
+        display: flex;
+        & > div {
+            flex: 3;
+            flex-direction: column;
+            display: flex;
+            padding-top: 10px;
+        }
+    }
+    &_nav {
+        color: $black-color;
+        & > a {
+            margin-bottom: 20px;
+        }
+    }
+    &_socialMedia {
+        padding: 0px 40px;
+        max-width: 300px;
+        border-left: 1px solid $gray-color;
+        border-right: 1px solid $gray-color;
+        strong {
+            color: $black-color;
+        }
+        input::placeholder {
+            color: $gray-color;
+            font-weight: 500;
+        }
+        input {
+            background: transparent;
+            border: none;
+            color: $gray-color;
+            font-weight: 500;
+            font-weight: 18px;
+            margin: 10px 0px 20px;
+            
+        }
+    }
+    &_contacts {
+        padding-left: 40px;
+        & > a {
+            width: fit-content;
+            position: relative;
+            margin-bottom: 4px;
+            &:after {
+                content: '';
+                height: 2px;
+                width: 80%;
+                right: 0;
+                bottom: 0;
+                position: absolute;
+                background: $gray-color;
+            }
+            &:nth-child(3) {
+                &:after {
+                    display: none;
+                }
+            }
+        } 
+    }
+}

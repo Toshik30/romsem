@@ -1,0 +1,80 @@
+@import './varibles';
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: $gray-light-color;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    list-style-type: none;
+    cursor: pointer;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+input:focus {
+    outline: none;
+}
+section {
+    background: $gray-light-color;
+}
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+.containerWrapper {
+    max-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 15px;
+    overflow: hidden;
+}
+.gray-color {
+    color: $gray-color;
+}
+.gray-light-color {
+    color: $gray-light-color;
+}
+.orange-color {
+    color: $orange-color;
+}
+.swiper-pagination-bullet-active {
+    background: $orange-color !important;
+}
+.primaryButton {
+    color: $white-color;
+    background: $orange-red-color;
+    border: none;
+    cursor: pointer;
+    padding: 12px 25px;
+    border-radius: $primary-radius;
+    font-size: 24px;
+    &.small {
+        font-size: 20px;
+        padding: 6px 12px;
+    }
+}
+.swiper-button-prev, .swiper-button-next {
+    background: $orange-red-color;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: calc(50% - 20px);
+    z-index: 10;
+}
+.swiper-button-prev {
+    clip-path: polygon(50% 50%, 100% 100%, 100% 0);
+    left: -20px;
+}
+.swiper-button-next {
+    clip-path: polygon(0 100%, 50% 50%, 0 0);
+    right: -20px;
+}

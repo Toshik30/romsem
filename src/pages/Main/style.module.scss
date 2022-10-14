@@ -1,0 +1,55 @@
+@import '../../assets/style/varibles';
+.mostPopular {
+    margin: 50px 0px;
+    &_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+     
+        & > a {
+            border-radius: $primary-radius;
+            display: inline-block;
+            height: 200px;
+            color: $white-color;
+            font-size: 24px;
+            line-height: 30px;
+            position: relative;
+            transition: .4s background-size;
+           &:nth-child(n) {
+                &:hover {
+                    background-size: 120%;
+                }
+           }
+            span {
+                position: absolute;
+                bottom: 5px;
+                left: 5px;
+            }
+            &:nth-child(1) {
+                background: url(../../assets/images/chicken.png) no-repeat;
+                background-size: 100%;
+                flex: calc(50% - 20px);
+            }
+            &:nth-child(2) {
+                background: url(../../assets/images/fish.png) no-repeat;
+                background-size: 100%;
+                flex: calc(25% - 20px);    
+            }
+            &:nth-child(3) {
+                background: url(../../assets/images/corn.png) no-repeat;
+                background-size: 100%;
+                flex: calc(25% - 20px);    
+            }
+            &:nth-child(4) {
+                background: url(../../assets/images/pizza.png) no-repeat;
+                background-size: 100%;
+                flex: calc(50% - 20px);
+            }
+            &:nth-child(5) {
+                background: url(../../assets/images/stocks.png) no-repeat;
+                background-size: 100%;
+                flex: calc(50% - 20px);
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+@import '../../assets/style/varibles';
+.navBasket {
+    background: $white-color;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    z-index: 10;
+    max-width: 360px;
+    width: 100%;
+    padding: 55px 40px;
+    .basketBlock {
+        background: $gray-light-color;
+        border-radius: $primary-radius;
+        padding-top: 12px;
+        text-align: center;
+        h3 {
+           
+            margin-bottom: 10px;
+        }
+        .promoution {
+            background: $orange-color;
+            margin-top: 25px;
+            width: 100%;
+            font-size: 14px;
+            display: inline-block;
+            color: $white-color;
+            padding: 12px 0px;
+            border-radius: 0px  0px $primary-radius $primary-radius;
+        }
+    }
+    .usLocation {
+        background: $gray-light-color;
+        border-radius: $primary-radius;
+        margin-top: 20px;
+        padding-bottom: 8px;
+        text-align: center;
+        .map {
+            background: url(../../assets/images/geolacation.png) no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 115px;
+            &_icon {
+                border-radius: 50%;
+                background: $orange-color url(../../assets/images/icons/geo.svg) no-repeat;
+                background-position: center;
+                width: 60px;
+                height: 60px;
+                display: block;
+                margin: 0 auto;
+                margin-top: -30px;
+            }
+        }
+        h3 {
+            margin: 10px 0px;
+        }
+    }
+}

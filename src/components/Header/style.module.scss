@@ -1,0 +1,70 @@
+@import '../../assets/style/varibles';
+.header {
+    position: sticky;
+    border-bottom: 0.5px solid $gray-color;
+    .headerWrapper {
+        display: flex;
+        justify-content: space-between;
+        .contactsHeader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px 15px 8px 0px;
+            border-right: 0.5px solid $gray-color;
+            max-width: 240px;
+            width: 100%;
+            a {
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .workTime {
+                display: flex;
+                align-items: center;
+                &_icon {
+                    margin-right: 5px;
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    background: url(../../assets/images/icons/workTime.svg) no-repeat;
+                }
+            }
+        }
+       .navigateHeader {
+            display: flex;
+            align-items: center;
+            justify-content : space-between;
+            width: 100%;
+            padding: 0px 20px;
+            .userLocation {
+                p {
+                    font-weight: 600;
+                }
+            }
+            .nav {
+                display: flex;
+                align-items: center;
+                div > a,p,span {
+                    cursor: pointer;
+                }
+                div > a, p {
+                    transition: .4s color;
+                    &:hover {
+                        color: $orange-color;
+                    }
+                }
+                .reviews {
+                    margin-right: 10px;
+                }
+                .search {
+                    margin-left: 30px;
+                    &_icon {
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        background: url(../../assets/images/icons/search.svg) no-repeat;
+                    }
+                }
+            }
+       }
+    }
+}
