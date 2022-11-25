@@ -78,3 +78,7 @@ section {
     clip-path: polygon(0 100%, 50% 50%, 0 0);
     right: -20px;
 }
+input.error {
+    border:1px solid #ff000030 ;
+    box-shadow: inset 0px 0px 8px #ff000096;
+}

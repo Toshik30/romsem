@@ -6,7 +6,9 @@ const menuSlice = createSlice({
     name: 'menu',
     initialState: {
         pathLocation: window.location.pathname.split('/').pop(),
-        menu: toRender
+        menu: toRender,
+        basket: [],
+        popupIsOpen: false,
     },
     reducers: {
         setMenu(state, action) {
@@ -16,8 +18,22 @@ const menuSlice = createSlice({
             } else {
                 state.menu = Object.entries(data).flat(Infinity).filter((item) => item.discount > 0)
             }
+       },
+       addToBasket(state, action) {
+            state.basket.push(action.payload)
+       },
+       deleteFromBasket(state, action) {
+            console.log(action.payload);
+            console.log(state.basket);
+            state.basket = state.basket.filter(({name}, index) => index !== action.payload)
+       },
+       openPopup(state) {
+            state.popupIsOpen = true
+       },
+       closePopup(state) {
+            state.popupIsOpen = false
        }
     }
 })
-export const { setMenu } = menuSlice.actions
+export const { setMenu, addToBasket, deleteFromBasket, openPopup, closePopup } = menuSlice.actions
 export default menuSlice.reducer

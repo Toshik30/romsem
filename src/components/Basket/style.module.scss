@@ -1,0 +1,25 @@
+@import '../../assets/style/varibles';
+
+.userBasket {
+    text-align: start;
+    padding: 10px;
+    P {
+        max-width: 80%;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    & > div {
+        margin-bottom: 10px;
+        position: relative;
+    }
+    .deleteItem {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 0;
+        z-index: 2;
+        top: calc(50% - 10px);
+        background: url(../../assets/images/icons/deleteButton.svg) no-repeat;
+        background-size: cover;
+    }
+}
