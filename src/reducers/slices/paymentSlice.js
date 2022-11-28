@@ -3,9 +3,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const paymentCard = createAsyncThunk(
     'Payment/paymentCard',
     async (result) => {
-        setTimeout(() => {
-            result.map((item) => console.log(item)) 
-            console.log(result);
+         setTimeout(() =>  {
+            result.map((item) => item) 
         }, 2000)
     }
 )
@@ -20,8 +19,9 @@ const  paymentSlice = createSlice({
             state.isLoading = true
         },
         [paymentCard.fulfilled]: (state, action) => {
-            action.meta.arg.length === 4 ? state.paymentData.push(action.meta.arg): console.log('sosi jepu')
+            action.meta.arg.map((item) => item !== '' ? state.paymentData = action.meta.arg : console.error('Error'))
             console.log(action);
+            console.log(state.paymentData);
         }
     }
 })

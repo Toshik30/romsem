@@ -4,10 +4,12 @@ import styles from './style.module.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { closePopup, openPopup } from '../../reducers/slices/menuSlice'
 import CreditCard from '../CreditCard/CreditCard'
+import { useState } from 'react'
 export const NavBasket = () => {
   const dispatch = useDispatch()
   const userBasket = useSelector(state => state.menu.basket)
   const popupIsOpen = useSelector(state => state.menu.popupIsOpen)
+  const [isMethodPayment, setMethodPayment] = useState(false)
   return (
     <div>
     <div className={styles.navBasket}>
@@ -33,8 +35,20 @@ export const NavBasket = () => {
         <div className={styles.popup}>
           <div className={popupIsOpen ? styles.popupBlock + ' active' : styles.popupBlock}>
             <span className={styles.closePopup} onClick={() => dispatch(closePopup(popupIsOpen))}></span>
-            <h1>Hello i'm POPUP</h1>
-            <CreditCard/>
+            <h1>Оплата и доставка</h1>
+            <div className={styles.methodPayment}>
+              <span 
+                className={!isMethodPayment ? styles.methodPayment__button : styles.methodPayment__button + ' ' + styles.active }
+                onClick={() => setMethodPayment(!isMethodPayment)}
+              > Наличные
+              </span>
+              <span 
+                className={!isMethodPayment ? styles.methodPayment__button + ' ' + styles.active : styles.methodPayment__button}
+                onClick={() => setMethodPayment(!isMethodPayment)}
+              >Карта
+              </span>
+            </div>
+            {!isMethodPayment ? <CreditCard/> : <div>NALICHKA</div>}
             <h2>К оплате : {userBasket?.map(({cost}) => cost)?.reduce((acc,num) => acc + num, 0)}  ₴ </h2>
           </div>
         </div> 

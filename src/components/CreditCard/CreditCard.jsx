@@ -22,6 +22,10 @@ const CreditCard = () => {
     const isValidCvv = cvv === '' || (cvv.length !== 0 && cvv.length === 3 )
 
     const dispatch = useDispatch()
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(`You card number is : ' ${number}`)
+    }
     return (
         <div className={styles.cardsWrapper}>
             <Cards
@@ -32,7 +36,7 @@ const CreditCard = () => {
                 cvc={cvv}
                 focused={focus}
             />
-            <form  className={styles.form}>
+            <form  className={styles.form} onSubmit={handleSubmit}>
                 <input
                     className={isValidNumber ? styles.input : styles.input + ' error'} 
                     type="tel" 
@@ -87,7 +91,7 @@ const CreditCard = () => {
                     value="Оплатить" 
                     disabled={!isValidNumber || !isValidName || !isValidDate || !isValidCvv  }
                     className={styles.input} 
-                    onClick={() => dispatch(paymentCard([isValidNumber, isValidName, isValidDate, isValidCvv]))}
+                    onClick={() => dispatch(paymentCard([number, name, expiry, cvv]))}
                 />
             </form>
         </div>

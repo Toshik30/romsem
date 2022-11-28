@@ -98,6 +98,9 @@
     max-width: 800px;
     padding: 20px;
     background: #ffffffc7;
+    h1 {
+        text-align: center;
+    }
     .closePopup {
         width: 20px;
         height: 20px;
@@ -106,5 +109,24 @@
         right: 30px;
         background: url(../../assets/images/icons/closeIcon.png);
         background-size: cover;
+    }
+}
+.methodPayment {
+    text-align: center;
+    margin-top: 12px;
+    &__button {
+        cursor: pointer;
+        transition: all .4s;
+        border: 2px solid $orange-color;
+        border-radius: $primary-radius;
+        padding: 8px 12px;
+        font-weight: 600;
+        color: $orange-color;
+        margin: 0px 5px;
+
+        &.active {
+            background: $orange-color;
+            color: $white-color;
+        }
     }
 }
